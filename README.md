@@ -1,3 +1,3 @@
 # hacettepeCS
 
-This repiso
+This repository contains my college assignments
