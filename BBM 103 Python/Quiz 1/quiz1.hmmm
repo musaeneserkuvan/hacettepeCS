@@ -1,0 +1,27 @@
+# Gravity calculator
+# formula final position = [(gravity * falling time * falling time)/2]+[initial velocity*falling time]+[initial position]
+# constants >
+0 setn r1 -10 # constant gravity
+# inputs >
+1 read r2 # falling time
+2 read r3 # initial position
+3 read r4 # initial velocity
+# order of operations >
+#  [(gravity * falling time * falling time)/2]
+#  [initial velocity*falling time]
+#  [initial velocity*falling time] + [initial position]
+#  [(gravity * falling time * falling time)/2]+[initial velocity*falling time]+[initial position]
+# process 1
+4 mul r5 r2 r2 # r5 > square of falling time
+5 mul r6 r1 r5 # r6 > gravity * falling time * falling time
+6 setn r7 2 # divider 2
+7 div r8 r6 r7 # r8 > [(gravity * falling time * falling time)/2]
+# process 2
+8 mul r9 r4 r2 # r9 > [initial velocity*falling time]
+# process 3
+9 add r10 r9 r3 # r10 > [initial velocity*falling time] + [initial position]
+# process 4
+10 add r11 r8 r10 # r12 > final position
+# outputs >
+11 write r11
+12 halt
